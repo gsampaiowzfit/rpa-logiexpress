@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intranet LogiExpress - Tabela Oficial de Frete</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #1f2937;
+            margin: 0;
+            padding: 32px;
+        }
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 28px;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+        }
+        .header {
+            border-bottom: 3px solid #1d4ed8;
+            padding-bottom: 14px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            color: #1e3a8a;
+            font-size: 24px;
+        }
+        .header p {
+            margin: 6px 0 0;
+            color: #4b5563;
+            font-size: 14px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+        th {
+            background-color: #1e3a8a;
+            color: #ffffff;
+            text-align: left;
+            padding: 12px 14px;
+            font-size: 14px;
+        }
+        td {
+            padding: 11px 14px;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 14px;
+        }
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        .valor-frete {
+            font-weight: 700;
+            color: #047857;
+        }
+        .rodape {
+            margin-top: 18px;
+            font-size: 12px;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Intranet LogiExpress Brasil</h1>
+            <p>Tabela Oficial de Frete Fixo por Estado (UF) — Vigência 2026</p>
+        </div>
+
+        <table id="tabela-frete">
+            <thead>
+                <tr>
+                    <th>UF</th>
+                    <th>Região</th>
+                    <th>Valor do Frete (R$)</th>
+                    <th>Prazo Estimado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="linha-uf" data-uf="SP">
+                    <td>SP</td>
+                    <td>Sudeste</td>
+                    <td class="valor-frete">25.00</td>
+                    <td>2 dias</td>
+                </tr>
+                <tr class="linha-uf" data-uf="RJ">
+                    <td>RJ</td>
+                    <td>Sudeste</td>
+                    <td class="valor-frete">32.00</td>
+                    <td>3 dias</td>
+                </tr>
+                <tr class="linha-uf" data-uf="MG">
+                    <td>MG</td>
+                    <td>Sudeste</td>
+                    <td class="valor-frete">35.00</td>
+                    <td>3 dias</td>
+                </tr>
+                <tr class="linha-uf" data-uf="PR">
+                    <td>PR</td>
+                    <td>Sul</td>
+                    <td class="valor-frete">38.00</td>
+                    <td>4 dias</td>
+                </tr>
+                <tr class="linha-uf" data-uf="BA">
+                    <td>BA</td>
+                    <td>Nordeste</td>
+                    <td class="valor-frete">55.00</td>
+                    <td>6 dias</td>
+                </tr>
+                <tr class="linha-uf" data-uf="DF">
+                    <td>DF</td>
+                    <td>Centro-Oeste</td>
+                    <td class="valor-frete">45.00</td>
+                    <td>4 dias</td>
+                </tr>
+                <tr class="linha-uf" data-uf="OUTROS">
+                    <td>OUTROS</td>
+                    <td>Demais Regiões</td>
+                    <td class="valor-frete">65.00</td>
+                    <td>7 dias</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="rodape">
+            Sistema Interno de Tarifação Logística | Atualizado pela Diretoria de Operações
+        </div>
+    </div>
+</body>
+</html>

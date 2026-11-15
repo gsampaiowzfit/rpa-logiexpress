@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evidências de Teste — RPA LogiExpress Brasil</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f1f5f9;
+      color: #0f172a;
+      margin: 0;
+      padding: 28px;
+      line-height: 1.5;
+    }
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 36px 42px;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08);
+    }
+    .top-banner {
+      border-bottom: 4px solid #1e3a8a;
+      padding-bottom: 14px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    h1 { margin: 0; color: #1e3a8a; font-size: 26px; }
+    h2 {
+      color: #1e3a8a;
+      margin-top: 28px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e2e8f0;
+      font-size: 20px;
+    }
+    .btn-print {
+      background: #1d4ed8;
+      color: #ffffff;
+      border: none;
+      padding: 9px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 18px 0; }
+    .kpi {
+      background: #f8fafc;
+      border-left: 5px solid #1d4ed8;
+      padding: 12px 16px;
+      border-radius: 8px;
+    }
+    .kpi.ok { border-left-color: #16a34a; background: #f0fdf4; }
+    .kpi.err { border-left-color: #dc2626; background: #fef2f2; }
+    .kpi strong { display: block; font-size: 24px; }
+    .kpi span { font-size: 12px; color: #475569; text-transform: uppercase; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 12px; }
+    th { background: #1e3a8a; color: #ffffff; padding: 10px; text-align: left; }
+    td { padding: 9px 10px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+    .badge-ok { background: #dcfce7; color: #166534; padding: 3px 8px; border-radius: 99px; font-weight: 700; font-size: 11px; }
+    .badge-err { background: #fee2e2; color: #991b1b; padding: 3px 8px; border-radius: 99px; font-weight: 700; font-size: 11px; }
+    pre {
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 14px 16px;
+      border-radius: 8px;
+      font-family: Consolas, monospace;
+      font-size: 12px;
+      overflow-x: auto;
+    }
+    .evidence-img {
+      width: 100%;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+    @media print {
+      body { background: #ffffff; padding: 0; }
+      .page { box-shadow: none; padding: 16px; }
+      .btn-print { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="top-banner">
+      <div>
+        <h1>Caderno de Evidências de Teste — RPA LogiExpress Brasil</h1>
+        <div style="color:#475569;font-size:13px;margin-top:4px;">
+          Execução Auditada: <strong>EXEC-20261114-181214-35A1</strong> | Duração: <strong>9.23s</strong> | API ViaCEP ao vivo + SQLite + Excel + Logs
+        </div>
+      </div>
+      <button class="btn-print" onclick="window.print()">Imprimir / Salvar PDF</button>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><strong>10</strong><span>Cenários Executados</span></div>
+      <div class="kpi ok"><strong style="color:#166534;">5</strong><span>Sucesso (Fluxo Completo)</span></div>
+      <div class="kpi err"><strong style="color:#991b1b;">5</strong><span>Insucesso (Regras de Negócio)</span></div>
+      <div class="kpi"><strong style="color:#0f766e;">R$ 3.775,50</strong><span>Total Faturado Aprovado</span></div>
+    </div>
+
+    <h2>1. Matriz Completa de Cenários de Teste (Sucesso e Insucesso)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Cenário</th><th>Cliente</th><th>Dados Testados</th>
+          <th>Regra / Validação</th><th>Resultado Obtido</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>CT01</strong></td><td><span class="badge-ok">SUCESSO</span></td><td>Ana Souza</td><td>CPF <code>12345678901</code>, CEP <code>01001-000</code>, R$ 350,00</td><td>Regex padronizou CPF + API ViaCEP (SP) + Frete R$ 25,00</td><td>Total: <strong>R$ 375,00</strong></td></tr>
+        <tr><td><strong>CT02</strong></td><td><span class="badge-ok">SUCESSO</span></td><td>Bruno Oliveira</td><td>CPF <code>234.567.890-12</code>, CEP <code>20040002</code>, R$ 520,50</td><td>Regex padronizou CEP + API ViaCEP (RJ) + Frete R$ 32,00</td><td>Total: <strong>R$ 552,50</strong></td></tr>
+        <tr><td><strong>CT03</strong></td><td><span class="badge-err">INSUCESSO</span></td><td>Carlos Mendes</td><td>CPF <code>123.456</code>, CEP <code>30130-010</code>, R$ 200,00</td><td>Regex <code>^\d{11}$</code> bloqueia CPF com menos de 11 dígitos</td><td>Bloqueado sem travar fila</td></tr>
+        <tr><td><strong>CT04</strong></td><td><span class="badge-ok">SUCESSO</span></td><td>Fernanda Lima</td><td>CPF <code>34567890123</code>, CEP <code>30140-071</code>, R$ 890,00</td><td>Regex padronizou CPF + API ViaCEP (MG) + Frete R$ 35,00</td><td>Total: <strong>R$ 925,00</strong></td></tr>
+        <tr><td><strong>CT05</strong></td><td><span class="badge-err">INSUCESSO</span></td><td>Diego Costa</td><td>E-mail <code>diego.costa_sem_arroba.com</code>, R$ 150,00</td><td>Regex rejeita e-mail sem formato válido</td><td>Bloqueado sem travar fila</td></tr>
+        <tr><td><strong>CT06</strong></td><td><span class="badge-err">INSUCESSO</span></td><td>Eduarda Rocha</td><td>CEP <code>123</code>, R$ 410,00</td><td>Regex <code>^\d{8}$</code> rejeita CEP curto</td><td>Bloqueado sem travar fila</td></tr>
+        <tr><td><strong>CT07</strong></td><td><span class="badge-ok">SUCESSO</span></td><td>Gabriel Santos</td><td>CPF <code>678.901.234-56</code>, CEP <code>80020-310</code>, R$ 1.200,00</td><td>Regex + API ViaCEP (PR) + Frete R$ 38,00</td><td>Total: <strong>R$ 1.238,00</strong></td></tr>
+        <tr><td><strong>CT08</strong></td><td><span class="badge-err">INSUCESSO</span></td><td>Helena Martins</td><td>CEP <code>99999-999</code>, R$ 300,00</td><td>API ViaCEP retornou inexistente (<code>erro: true</code>)</td><td>Bloqueado sem travar fila</td></tr>
+        <tr><td><strong>CT09</strong></td><td><span class="badge-err">INSUCESSO</span></td><td>Igor Almeida</td><td>Valor Pedido <code>-50.00</code>, CEP <code>40020-000</code></td><td>Regra financeira exige <code>valor_pedido &gt; 0</code></td><td>Bloqueado sem travar fila</td></tr>
+        <tr><td><strong>CT10</strong></td><td><span class="badge-ok">SUCESSO</span></td><td>Juliana Pereira</td><td>CPF <code>90123456789</code>, CEP <code>70040-010</code>, R$ 640,00</td><td>Regex padronizou CPF + API ViaCEP (DF) + Frete R$ 45,00</td><td>Total: <strong>R$ 685,00</strong></td></tr>
+      </tbody>
+    </table>
+
+    <h2>2. Evidência Real de Logs (Sucesso e Insucesso Capturados)</h2>
+    <pre>2026-11-14 18:12:14 | INFO    | [CT01] CPF validado e padronizado via Regex: 123.456.789-01
+2026-11-14 18:12:17 | INFO    | [CT01] Endereço obtido da API: Praça da Sé, Sé - São Paulo/SP
+2026-11-14 18:12:17 | INFO    | [CT01] SUCESSO! Frete SP = R$ 25.00 | Valor Total = R$ 375.00
+...
+2026-11-14 18:12:18 | ERROR   | [CT03] INSUCESSO (Regra de Negócio): CPF inválido ('123.456'): deve conter exatamente 11 dígitos numéricos.
+2026-11-14 18:12:19 | ERROR   | [CT05] INSUCESSO (Regra de Negócio): E-mail inválido ('diego.costa_sem_arroba.com'): formato não atende ao padrão usuário@domínio.ext.
+2026-11-14 18:12:19 | ERROR   | [CT06] INSUCESSO (Regra de Negócio): CEP em formato inválido ('123'): deve possuir exatamente 8 dígitos.
+2026-11-14 18:12:22 | ERROR   | [CT08] INSUCESSO (Regra de Negócio): CEP 99999999 não encontrado na base dos Correios/ViaCEP.
+2026-11-14 18:12:22 | ERROR   | [CT09] INSUCESSO (Regra de Negócio): Valor do pedido inválido (R$ -50.00): deve ser maior que zero.
+...
+2026-11-14 18:12:24 | INFO    | EXECUÇÃO FINALIZADA em 9.23s | Total: 10 | Sucesso: 5 | Insucesso: 5</pre>
+
+    <h2>3. Evidências Visuais das Saídas Geradas</h2>
+    <p><strong>Planilha de Entrada:</strong></p>
+    <img class="evidence-img" src="midia/evidencia_entrada_excel.png" alt="Planilha de Entrada" />
+    <p><strong>Logs de Execução Passo a Passo:</strong></p>
+    <img class="evidence-img" src="midia/evidencia_logs_execucao.png" alt="Logs de Execução" />
+    <p><strong>Auditoria no Banco SQLite:</strong></p>
+    <img class="evidence-img" src="midia/evidencia_banco_sqlite.png" alt="Banco SQLite" />
+    <p><strong>Relatório Excel Final Gerado pelo Robô:</strong></p>
+    <img class="evidence-img" src="midia/evidencia_relatorio_final.png" alt="Relatório Excel Final" />
+  </div>
+</body>
+</html>

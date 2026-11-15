@@ -1,0 +1,74 @@
+2026-11-14 18:12:14 | INFO    | =================================================================
+2026-11-14 18:12:14 | INFO    | INICIANDO ROBÔ RPA LOGIEXPRESS | Execução: EXEC-20261114-181214-35A1
+2026-11-14 18:12:14 | INFO    | =================================================================
+2026-11-14 18:12:14 | INFO    | Conexão com banco SQLite inicializada: rpa_logiexpress.db
+2026-11-14 18:12:14 | INFO    | Lendo tabela oficial de frete via BeautifulSoup: tabela_frete_portal.html
+2026-11-14 18:12:14 | INFO    | Tabela de frete carregada com 7 UFs: {'SP': 25.0, 'RJ': 32.0, 'MG': 35.0, 'PR': 38.0, 'BA': 55.0, 'DF': 45.0, 'OUTROS': 65.0}
+2026-11-14 18:12:14 | INFO    | Planilha 'clientes_pendentes.xlsx' carregada: 10 registros pendentes.
+2026-11-14 18:12:14 | INFO    | -----------------------------------------------------------------
+2026-11-14 18:12:14 | INFO    | [CT01] Iniciando processamento de 'Ana Souza'...
+2026-11-14 18:12:14 | INFO    | [CT01] CPF validado e padronizado via Regex: 123.456.789-01
+2026-11-14 18:12:14 | INFO    | [CT01] E-mail validado via Regex: ana.souza@empresa.com.br
+2026-11-14 18:12:14 | INFO    | [CT01] CEP validado e formatado via Regex: 01001-000
+2026-11-14 18:12:14 | INFO    | [CT01] Consultando API ViaCEP para CEP 01001000...
+2026-11-14 18:12:17 | INFO    | [CT01] Endereço obtido da API: Praça da Sé, Sé - São Paulo/SP
+2026-11-14 18:12:17 | INFO    | [CT01] SUCESSO! Frete SP = R$ 25.00 | Valor Total = R$ 375.00
+2026-11-14 18:12:17 | INFO    | -----------------------------------------------------------------
+2026-11-14 18:12:17 | INFO    | [CT02] Iniciando processamento de 'Bruno Oliveira'...
+2026-11-14 18:12:17 | INFO    | [CT02] CPF validado e padronizado via Regex: 234.567.890-12
+2026-11-14 18:12:17 | INFO    | [CT02] E-mail validado via Regex: bruno.oliveira@logi.com
+2026-11-14 18:12:17 | INFO    | [CT02] CEP validado e formatado via Regex: 20040-002
+2026-11-14 18:12:17 | INFO    | [CT02] Consultando API ViaCEP para CEP 20040002...
+2026-11-14 18:12:18 | INFO    | [CT02] Endereço obtido da API: Avenida Rio Branco, Centro - Rio de Janeiro/RJ
+2026-11-14 18:12:18 | INFO    | [CT02] SUCESSO! Frete RJ = R$ 32.00 | Valor Total = R$ 552.50
+2026-11-14 18:12:18 | INFO    | -----------------------------------------------------------------
+2026-11-14 18:12:18 | INFO    | [CT03] Iniciando processamento de 'Carlos Mendes'...
+2026-11-14 18:12:18 | ERROR   | [CT03] INSUCESSO (Regra de Negócio): CPF inválido ('123.456'): deve conter exatamente 11 dígitos numéricos.
+2026-11-14 18:12:18 | INFO    | -----------------------------------------------------------------
+2026-11-14 18:12:18 | INFO    | [CT04] Iniciando processamento de 'Fernanda Lima'...
+2026-11-14 18:12:18 | INFO    | [CT04] CPF validado e padronizado via Regex: 345.678.901-23
+2026-11-14 18:12:18 | INFO    | [CT04] E-mail validado via Regex: fernanda.lima@comercio.org.br
+2026-11-14 18:12:18 | INFO    | [CT04] CEP validado e formatado via Regex: 30140-071
+2026-11-14 18:12:18 | INFO    | [CT04] Consultando API ViaCEP para CEP 30140071...
+2026-11-14 18:12:19 | INFO    | [CT04] Endereço obtido da API: Rua dos Aimorés, Boa Viagem - Belo Horizonte/MG
+2026-11-14 18:12:19 | INFO    | [CT04] SUCESSO! Frete MG = R$ 35.00 | Valor Total = R$ 925.00
+2026-11-14 18:12:19 | INFO    | -----------------------------------------------------------------
+2026-11-14 18:12:19 | INFO    | [CT05] Iniciando processamento de 'Diego Costa'...
+2026-11-14 18:12:19 | INFO    | [CT05] CPF validado e padronizado via Regex: 456.789.012-34
+2026-11-14 18:12:19 | ERROR   | [CT05] INSUCESSO (Regra de Negócio): E-mail inválido ('diego.costa_sem_arroba.com'): formato não atende ao padrão usuário@domínio.ext.
+2026-11-14 18:12:19 | INFO    | -----------------------------------------------------------------
+2026-11-14 18:12:19 | INFO    | [CT06] Iniciando processamento de 'Eduarda Rocha'...
+2026-11-14 18:12:19 | INFO    | [CT06] CPF validado e padronizado via Regex: 567.890.123-45
+2026-11-14 18:12:19 | INFO    | [CT06] E-mail validado via Regex: eduarda@rocha.com
+2026-11-14 18:12:19 | ERROR   | [CT06] INSUCESSO (Regra de Negócio): CEP em formato inválido ('123'): deve possuir exatamente 8 dígitos.
+2026-11-14 18:12:19 | INFO    | -----------------------------------------------------------------
+2026-11-14 18:12:19 | INFO    | [CT07] Iniciando processamento de 'Gabriel Santos'...
+2026-11-14 18:12:19 | INFO    | [CT07] CPF validado e padronizado via Regex: 678.901.234-56
+2026-11-14 18:12:19 | INFO    | [CT07] E-mail validado via Regex: gabriel.santos@tech.io
+2026-11-14 18:12:19 | INFO    | [CT07] CEP validado e formatado via Regex: 80020-310
+2026-11-14 18:12:19 | INFO    | [CT07] Consultando API ViaCEP para CEP 80020310...
+2026-11-14 18:12:20 | INFO    | [CT07] Endereço obtido da API: Rua XV de Novembro, Centro - Curitiba/PR
+2026-11-14 18:12:20 | INFO    | [CT07] SUCESSO! Frete PR = R$ 38.00 | Valor Total = R$ 1238.00
+2026-11-14 18:12:20 | INFO    | -----------------------------------------------------------------
+2026-11-14 18:12:20 | INFO    | [CT08] Iniciando processamento de 'Helena Martins'...
+2026-11-14 18:12:20 | INFO    | [CT08] CPF validado e padronizado via Regex: 789.012.345-67
+2026-11-14 18:12:20 | INFO    | [CT08] E-mail validado via Regex: helena@martins.com.br
+2026-11-14 18:12:20 | INFO    | [CT08] CEP validado e formatado via Regex: 99999-999
+2026-11-14 18:12:20 | INFO    | [CT08] Consultando API ViaCEP para CEP 99999999...
+2026-11-14 18:12:22 | ERROR   | [CT08] INSUCESSO (Regra de Negócio): CEP 99999999 não encontrado na base dos Correios/ViaCEP.
+2026-11-14 18:12:22 | INFO    | -----------------------------------------------------------------
+2026-11-14 18:12:22 | INFO    | [CT09] Iniciando processamento de 'Igor Almeida'...
+2026-11-14 18:12:22 | ERROR   | [CT09] INSUCESSO (Regra de Negócio): Valor do pedido inválido (R$ -50.00): deve ser maior que zero.
+2026-11-14 18:12:22 | INFO    | -----------------------------------------------------------------
+2026-11-14 18:12:22 | INFO    | [CT10] Iniciando processamento de 'Juliana Pereira'...
+2026-11-14 18:12:22 | INFO    | [CT10] CPF validado e padronizado via Regex: 901.234.567-89
+2026-11-14 18:12:22 | INFO    | [CT10] E-mail validado via Regex: juliana.p@brasilia.gov.br
+2026-11-14 18:12:22 | INFO    | [CT10] CEP validado e formatado via Regex: 70040-010
+2026-11-14 18:12:22 | INFO    | [CT10] Consultando API ViaCEP para CEP 70040010...
+2026-11-14 18:12:23 | INFO    | [CT10] Endereço obtido da API: SBN Quadra 1, Asa Norte - Brasília/DF
+2026-11-14 18:12:23 | INFO    | [CT10] SUCESSO! Frete DF = R$ 45.00 | Valor Total = R$ 685.00
+2026-11-14 18:12:24 | INFO    | =================================================================
+2026-11-14 18:12:24 | INFO    | EXECUÇÃO FINALIZADA em 9.23s | Total: 10 | Sucesso: 5 | Insucesso: 5
+2026-11-14 18:12:24 | INFO    | Relatório Excel gerado em: C:\Users\gabri\.gemini\antigravity\scratch\rpa-logiexpress\dados\relatorio_processamento.xlsx
+2026-11-14 18:12:24 | INFO    | Painel HTML atualizado em: C:\Users\gabri\.gemini\antigravity\scratch\rpa-logiexpress\portal_intranet\painel_resultado.html
+2026-11-14 18:12:24 | INFO    | =================================================================

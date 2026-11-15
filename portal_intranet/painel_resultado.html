@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel RPA LogiExpress - Resultado da Execução</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f1f5f9; margin: 0; padding: 28px; color: #0f172a; }
+        .wrap { max-width: 1180px; margin: 0 auto; background: #fff; padding: 24px; border-radius: 12px; box-shadow: 0 4px 16px rgba(15,23,42,.08); }
+        h1 { margin: 0 0 6px; color: #1e3a8a; font-size: 24px; }
+        .meta { color: #475569; font-size: 13px; margin-bottom: 18px; }
+        .cards { display: flex; gap: 16px; margin-bottom: 22px; }
+        .card { flex: 1; padding: 14px 18px; border-radius: 8px; background: #f8fafc; border-left: 5px solid #1d4ed8; }
+        .card.ok { border-left-color: #16a34a; background: #f0fdf4; }
+        .card.err { border-left-color: #dc2626; background: #fef2f2; }
+        .card .num { font-size: 26px; font-weight: 700; }
+        .card .lbl { font-size: 12px; color: #475569; text-transform: uppercase; }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        th { background: #1e3a8a; color: #fff; padding: 10px; text-align: left; }
+        td { padding: 9px 10px; border-bottom: 1px solid #e2e8f0; }
+        .badge-ok { background: #dcfce7; color: #166534; padding: 3px 8px; border-radius: 99px; font-weight: 700; font-size: 11px; }
+        .badge-erro { background: #fee2e2; color: #991b1b; padding: 3px 8px; border-radius: 99px; font-weight: 700; font-size: 11px; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>Painel de Auditoria — RPA LogiExpress Brasil</h1>
+        <div class="meta">Execução: <strong>EXEC-20261114-181214-35A1</strong> | Tempo total: <strong>9.23s</strong> | Banco SQLite sincronizado</div>
+        <div class="cards">
+            <div class="card"><div class="num">10</div><div class="lbl">Total Lidos</div></div>
+            <div class="card ok"><div class="num">5</div><div class="lbl">Sucesso</div></div>
+            <div class="card err"><div class="num">5</div><div class="lbl">Insucesso (Regra de Negócio)</div></div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th><th>Nome</th><th>CPF</th><th>CEP</th><th>UF</th>
+                    <th>Frete</th><th>Total</th><th>Status</th><th>Detalhe do Processamento</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            <tr>
+                <td><strong>CT01</strong></td>
+                <td>Ana Souza</td>
+                <td>123.456.789-01</td>
+                <td>01001-000</td>
+                <td>SP</td>
+                <td>R$ 25.00</td>
+                <td>R$ 375.00</td>
+                <td><span class="badge-ok">SUCESSO</span></td>
+                <td>Processado com sucesso. Frete SP: R$ 25.00 | Total: R$ 375.00</td>
+            </tr>
+            
+            <tr>
+                <td><strong>CT02</strong></td>
+                <td>Bruno Oliveira</td>
+                <td>234.567.890-12</td>
+                <td>20040-002</td>
+                <td>RJ</td>
+                <td>R$ 32.00</td>
+                <td>R$ 552.50</td>
+                <td><span class="badge-ok">SUCESSO</span></td>
+                <td>Processado com sucesso. Frete RJ: R$ 32.00 | Total: R$ 552.50</td>
+            </tr>
+            
+            <tr>
+                <td><strong>CT03</strong></td>
+                <td>Carlos Mendes</td>
+                <td>123.456</td>
+                <td>30130-010</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td><span class="badge-erro">INSUCESSO</span></td>
+                <td>Regra de Negócio: CPF inválido ('123.456'): deve conter exatamente 11 dígitos numéricos.</td>
+            </tr>
+            
+            <tr>
+                <td><strong>CT04</strong></td>
+                <td>Fernanda Lima</td>
+                <td>345.678.901-23</td>
+                <td>30140-071</td>
+                <td>MG</td>
+                <td>R$ 35.00</td>
+                <td>R$ 925.00</td>
+                <td><span class="badge-ok">SUCESSO</span></td>
+                <td>Processado com sucesso. Frete MG: R$ 35.00 | Total: R$ 925.00</td>
+            </tr>
+            
+            <tr>
+                <td><strong>CT05</strong></td>
+                <td>Diego Costa</td>
+                <td>456.789.012-34</td>
+                <td>80010-010</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td><span class="badge-erro">INSUCESSO</span></td>
+                <td>Regra de Negócio: E-mail inválido ('diego.costa_sem_arroba.com'): formato não atende ao padrão usuário@domínio.ext.</td>
+            </tr>
+            
+            <tr>
+                <td><strong>CT06</strong></td>
+                <td>Eduarda Rocha</td>
+                <td>567.890.123-45</td>
+                <td>123</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td><span class="badge-erro">INSUCESSO</span></td>
+                <td>Regra de Negócio: CEP em formato inválido ('123'): deve possuir exatamente 8 dígitos.</td>
+            </tr>
+            
+            <tr>
+                <td><strong>CT07</strong></td>
+                <td>Gabriel Santos</td>
+                <td>678.901.234-56</td>
+                <td>80020-310</td>
+                <td>PR</td>
+                <td>R$ 38.00</td>
+                <td>R$ 1238.00</td>
+                <td><span class="badge-ok">SUCESSO</span></td>
+                <td>Processado com sucesso. Frete PR: R$ 38.00 | Total: R$ 1238.00</td>
+            </tr>
+            
+            <tr>
+                <td><strong>CT08</strong></td>
+                <td>Helena Martins</td>
+                <td>789.012.345-67</td>
+                <td>99999-999</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td><span class="badge-erro">INSUCESSO</span></td>
+                <td>Regra de Negócio: CEP 99999999 não encontrado na base dos Correios/ViaCEP.</td>
+            </tr>
+            
+            <tr>
+                <td><strong>CT09</strong></td>
+                <td>Igor Almeida</td>
+                <td>890.123.456-78</td>
+                <td>40020-000</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td><span class="badge-erro">INSUCESSO</span></td>
+                <td>Regra de Negócio: Valor do pedido inválido (R$ -50.00): deve ser maior que zero.</td>
+            </tr>
+            
+            <tr>
+                <td><strong>CT10</strong></td>
+                <td>Juliana Pereira</td>
+                <td>901.234.567-89</td>
+                <td>70040-010</td>
+                <td>DF</td>
+                <td>R$ 45.00</td>
+                <td>R$ 685.00</td>
+                <td><span class="badge-ok">SUCESSO</span></td>
+                <td>Processado com sucesso. Frete DF: R$ 45.00 | Total: R$ 685.00</td>
+            </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
